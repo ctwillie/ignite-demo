@@ -5,7 +5,7 @@ import { TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon } from "../components"
 import { translate } from "../i18n"
-import { DemoCommunityScreen, DemoShowroomScreen, DemoDebugScreen } from "../screens"
+import { DemoCommunityScreen, DemoShowroomScreen, DemoDebugScreen, FooScreen } from "../screens"
 import { DemoPodcastListScreen } from "../screens/DemoPodcastListScreen"
 import { colors, spacing, typography } from "../theme"
 import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
@@ -15,6 +15,7 @@ export type DemoTabParamList = {
   DemoShowroom: { queryIndex?: string; itemIndex?: string }
   DemoDebug: undefined
   DemoPodcastList: undefined
+  Foo: undefined
 }
 
 /**
@@ -83,6 +84,17 @@ export function DemoNavigator() {
         component={DemoDebugScreen}
         options={{
           tabBarLabel: translate("demoNavigator.debugTab"),
+          tabBarIcon: ({ focused }) => (
+            <Icon icon="debug" color={focused && colors.tint} size={30} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Foo"
+        component={FooScreen}
+        options={{
+          tabBarLabel: translate("fooScreen.title"),
           tabBarIcon: ({ focused }) => (
             <Icon icon="debug" color={focused && colors.tint} size={30} />
           ),

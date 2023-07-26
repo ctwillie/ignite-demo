@@ -120,6 +120,12 @@ const en = {
     },
   },
   // @demo remove-block-end
+  fooScreen: {
+    title: "Foo",
+    lorem2Sentences:
+      "Nulla cupidatat deserunt amet quis aliquip nostrud do adipisicing. Adipisicing excepteur elit laborum Lorem adipisicing do duis.",
+    demoHeaderTxExample: "Yay",
+  },
 }
 
 export default en
